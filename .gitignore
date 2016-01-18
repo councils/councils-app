@@ -1,5 +1,16 @@
 # Domo Apps specific
-dist
+www
+
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+bower_components/
+node_modules/
+platforms/
+plugins/
+.tmp/
+.sass-cache/
+.DS_Store
 
 ############################################################################
 # NodeJS specific gitignore
@@ -116,7 +127,7 @@ com_crashlytics_export_strings.xml
 
 ############################################################################
 # SublimeText gitignore
-# https://help.github.com/articles/ignoring-files 
+# https://help.github.com/articles/ignoring-files
 
 # cache files for sublime text
 *.tmlanguage.cache

@@ -1,0 +1,61 @@
+<md-tabs md-swipe-content md-no-disconnect md-no-ink-bar md-center-tabs class="no-border" md-selected="detail.weekIndex">
+  <md-tab ng-repeat="week in detail.weeks" label="{{week.title}}"></md-tab>
+</md-tabs>
+<div class="paper bg-white margin-on-md md-whiteframe-z1">
+  <div layout="row">
+    <md-autocomplete flex
+        md-input-name="hymn"
+        md-selected-item="agenda.openingHymn"
+        md-search-text="detail.searchText"
+        md-items="hymn in detail.querySearch(detail.searchText)"
+        md-item-text="hymn.name + ' - ' + hymn.number"
+        md-floating-label="Opening Hymn">
+      <md-item-template>
+        <span md-highlight-text="detail.searchText">{{item.name + ' - ' + item.number}}</span>
+      </md-item-template>
+    </md-autocomplete>
+    <md-button ng-disabled="!agenda.openingHymn" class="md-icon-button" ng-click="detail.openHymn(agenda.openingHymn)">
+      <md-icon>queue_music</md-icon>
+    </md-button>
+  </div>
+  <md-input-container>
+    <label>Opening prayer</label>
+    <input ng-model="agenda.openingPrayer" />
+  </md-input-container>
+  <md-input-container>
+    <label>Spiritual thought</label>
+    <input ng-model="agenda.spiritualThought" />
+  </md-input-container>
+   <md-input-container>
+    <label>High councilor remarks from...</label>
+    <textarea ng-model="agenda.highCouncil"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Review assignments</label>
+    <textarea ng-model="agenda.assignments"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Spiritual welfare</label>
+    <textarea ng-model="agenda.spiritualWelfare"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Temporal Welfare</label>
+    <textarea ng-model="agenda.temporalWelfare"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Fellowship</label>
+    <textarea ng-model="agenda.fellowship"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Missionary</label>
+    <textarea ng-model="agenda.missionary"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Events</label>
+    <textarea ng-model="agenda.events"></textarea>
+  </md-input-container>
+  <md-input-container>
+    <label>Closing prayer</label>
+    <input ng-model="agenda.closingPrayer" />
+  </md-input-container>
+</div>

@@ -1,0 +1,34 @@
+@import '../common/scss/common';
+
+.no-border {
+  md-tabs-wrapper {
+    border: none;
+  }
+}
+
+#detail-tabs {
+  md-next-button, md-prev-button {
+    &.md-disabled {
+      opacity: 0;
+      width: 0px;
+    }
+  }
+}
+
+.agenda-item {
+  color: $green;
+  .agenda-title {
+    fon-size: 14px;
+    width: 100%;
+  }
+}
+
+md-tab-item.md-tab {
+  line-height: 15px;
+  font-size: 12px;
+  padding: 19px 16px 16px;
+ }
+
+.paper {
+  padding: 32px;
+}
