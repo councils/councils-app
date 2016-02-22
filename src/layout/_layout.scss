@@ -102,6 +102,7 @@ md-toolbar.glass {
 md-toolbar.bottom-bar {
   background: #fff;
   color: $green;
+  border-top: 1px solid rgba(0,0,0,.12);
   md-icon {
     color: $green;
   }

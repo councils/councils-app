@@ -14,7 +14,7 @@
       </header>
       <md-content class="menu-items">
         <md-list class="menu-item-list">
-          <md-list-item class="menu-item" ng-repeat="item in navItems" ui-sref="{{item.state}}" ui-sref-active="active" ng-click="close(item.state)">
+          <md-list-item class="menu-item" ng-repeat="item in layout.navItems" ui-sref="{{item.state}}" ui-sref-active="active" ng-click="layout.close(item.state)">
             <md-icon class="accent-icon">{{item.icon}}</md-icon>
             <p>{{item.name}}</p>
           </md-list-item>
@@ -34,7 +34,7 @@
             <span flex></span>
           </div>
       </md-toolbar>
-      <div class="full-height" layout="column" ng-transclude></div>
+      <ui-view name="main" class="main-content full-height" layout="column"></ui-view>
     </div>
   </section>
 </div>

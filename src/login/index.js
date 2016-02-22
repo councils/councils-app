@@ -10,7 +10,7 @@ module.exports = (angular) => {
         url: '/login',
         title: 'Login',
         views: {
-          'main' : {
+          'fullscreen' : {
             template: require('./login.html'),
             controller: 'LoginCtrl',
             controllerAs: 'login'

@@ -6,7 +6,7 @@ module.exports = (angular) => {
 
   .config(($stateProvider) => {
     $stateProvider
-      .state('feedback', {
+      .state('layout.feedback', {
         url: '/feedback',
         title: 'Feedback',
         views: {

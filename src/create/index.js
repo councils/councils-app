@@ -6,7 +6,7 @@ module.exports = (angular) => {
 
   .config(($stateProvider) => {
     $stateProvider
-      .state('create', {
+      .state('layout.create', {
         abtract: true,
         url: '/create',
         views: {
@@ -22,7 +22,7 @@ module.exports = (angular) => {
           }
         }
       })
-      .state('create.assignment', {
+      .state('layout.create.assignment', {
         title: 'Create Assignment',
         url: '/assignment',
         navType: 'back',
@@ -32,7 +32,7 @@ module.exports = (angular) => {
           }
         }
       })
-      .state('create.discussion', {
+      .state('layout.create.discussion', {
         title: 'Create Discussion',
         url: '/discussion',
         navType: 'back',

@@ -37,7 +37,8 @@ var appModule = module.exports = angular
     require('./create')(angular).name,
     require('./feedback')(angular).name,
     require('./settings')(angular).name,
-    require('./login')(angular).name
+    require('./login')(angular).name,
+    require('./onboarding')(angular).name
   ])
 
   // .constant('version', require('../package.json').version)
@@ -46,7 +47,13 @@ var appModule = module.exports = angular
 
   .config(function ($compileProvider, $urlRouterProvider, $mdThemingProvider, $ionicAppProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    $urlRouterProvider.otherwise('/home');
+
+    // Onboarding? -> Home
+    if (!window.localStorage.getItem('councilsApp.onboarding')) {
+        $urlRouterProvider.otherwise('/onboarding');
+    } else {
+        $urlRouterProvider.otherwise('/home');
+    }
 
     // Identify app
     $ionicAppProvider.identify({
@@ -193,10 +200,15 @@ var appModule = module.exports = angular
 
     $rootScope.$on('$stateChangeSuccess',
       function (event, toState, toParams) {
-        $rootScope.title = toParams.council ? toParams.council : toState.title;
-        $rootScope.navIcon = toState.navType === 'back' ? 'arrow_back' : 'menu';
-        $rootScope.toggleLeft = toState.navType === 'back' ? back : buildToggler('left');
-        $log.debug('$stateChangeSuccess - name:', toState.name);
+          console.info(!window.localStorage.getItem('councilsApp.onboarding'));
+          if (toState.name === 'login' && !window.localStorage.getItem('councilsApp.onboarding')) {
+              return $state.go('onboarding');
+          } else {
+              $rootScope.title = toParams.council ? toParams.council : toState.title;
+              $rootScope.navIcon = toState.navType === 'back' ? 'arrow_back' : 'menu';
+              $rootScope.toggleLeft = toState.navType === 'back' ? back : buildToggler('left');
+              $log.debug('$stateChangeSuccess - name:', toState.name);
+          }
       });
 
     function back () {
@@ -224,7 +236,7 @@ var appModule = module.exports = angular
     $rootScope.$on('$stateChangeError',
       function (event, toState, toParams, fromState, fromParams, error) {
         if (error === "AUTH_REQUIRED") {
-          return $state.go('login');
+            return $state.go('login');
         }
         $log.error('$stateChangeError', {
           event      : event,

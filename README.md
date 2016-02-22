@@ -2,10 +2,11 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Getting Started
-1. clone this repo
+1. clone this repo:
     `$ git clone git@github.com:councils/councils.git`
-2. install dependencies `npm install`
-3. start server `npm start`
+2. install dependencies: `npm install`
+3. create cordova projects: `cordova platform add ios` and `cordova platform add android`
+3. start server: `npm start`
 
 > I recommend using the browser's device emulator to symlate various device sizes.
 

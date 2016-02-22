@@ -6,7 +6,7 @@ module.exports = (angular) => {
 
   .config(($stateProvider) => {
     $stateProvider
-      .state('settings', {
+      .state('layout.settings', {
         url: '/settings',
         title: 'Settings',
         views: {

@@ -5,7 +5,7 @@ module.exports = (angular) => {
   var ngModule = angular.module('councils.home', [])
 
   .config(($stateProvider) => {
-    $stateProvider.state('home', {
+    $stateProvider.state('layout.home', {
       title: 'Home',
       url: '/home',
       views: {

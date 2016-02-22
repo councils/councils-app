@@ -1,0 +1,19 @@
+<ion-pane>
+    <div class="full-height" layout="column">
+        <ion-slide-box pager-click="onboarding.pagerClicked(index)" layout="row">
+            <ion-slide ng-repeat="slide in onboarding.slides">
+                <md-content layout-padding class="full-height" layout="column" layout-align="start center">
+                    <div>
+                        <h1>{{slide.title}}</h1>
+                        <p>{{slide.blurb}}</p>
+                        <img ng-src="{{slide.img}}">
+                    </div>
+                </md-content>
+            </ion-slide>
+        </ion-slide-box>
+        <md-toolbar class="md-menu-toolbar bottom-bar" layout="row" layout-align="center center">
+            <md-button class="md-primary" ng-click="onboarding.goLogin()" flex="33">Login</md-button>
+            <md-button class="md-primary" ng-click="onboarding.goLogin()" flex="33">Sign up</md-button>
+        </md-toolbar>
+    </div>
+</ion-pane>

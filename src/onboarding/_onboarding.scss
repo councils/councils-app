@@ -1,0 +1,32 @@
+@import '../common/scss/common';
+
+.slider {
+    height: 100%;
+    .slider-slides {
+        position: absolute;
+    }
+    md-content {
+        padding: 0;
+        text-align: center;
+        overflow: hidden;
+        width: 80%;
+        margin: 72px auto 0;
+        img {
+            width: 100%;
+            margin: 24px auto -8px;
+            max-width: 400px;
+        }
+    }
+}
+
+.slider-pager {
+    top: 32px;
+    bottom: auto;
+    .slider-pager-page {
+        margin: 0px 4px;
+        opacity: 0.1;
+        &.active {
+            color: $green;
+        }
+    }
+}

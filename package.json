@@ -9,7 +9,8 @@
     "tdd": "NODE_ENV=test ./node_modules/karma/bin/karma start ./karma.conf.js --browsers Chrome",
     "eslint": "node_modules/.bin/eslint src/**",
     "coveralls": "npm run test-ci && node node_modules/lcov-filter/index.js ./coverage/phantomjs/lcov.info spec | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "build": "rm -rf ./www && NODE_ENV=production ./node_modules/.bin/webpack && cordova build",
+    "build": "rm -rf ./www && NODE_ENV=production ./node_modules/.bin/webpack",
+    "build-native": "rm -rf ./www && NODE_ENV=production ./node_modules/.bin/webpack && cordova build",
     "preversion": "npm run eslint && npm test",
     "version": "npm run build && npm run changelog && git add -A CHANGELOG.md",
     "postversion": "git push && git push --tags",
@@ -18,8 +19,8 @@
     "android": "cordova run android"
   },
   "cordovaPlatforms": [
-    "ios",
-    "android"
+    "android",
+    "ios"
   ],
   "cordovaPlugins": [
     "cordova-plugin-device",

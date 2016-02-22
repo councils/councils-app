@@ -6,7 +6,7 @@ module.exports = (angular) => {
 
   .config(($stateProvider) => {
     $stateProvider
-      .state('detail', {
+      .state('layout.detail', {
         title: 'Details',
         url: '/detail/:council?tabIndex',
         navType: 'back',
